@@ -25,7 +25,10 @@ export default function Home() {
           <p className="text-xl font-light mb-8 max-w-2xl">
             Exploring the intersection of design, development, and digital innovation
           </p>
-          <Button asChild variant="outline" className="text-white border-white hover:bg-white/10">
+          <Button 
+            asChild 
+            className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border-white/40 border hover:border-white/60 transition-all"
+          >
             <Link href="/blog">
               Read Latest Posts <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
