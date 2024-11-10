@@ -3,6 +3,7 @@ import Link from "next/link";
 import { formatDistanceToNow } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   const recentPosts = [...posts]
@@ -11,12 +12,13 @@ export default function Home() {
 
   return (
     <main>
-      <section className="relative h-screen flex items-center">
+      <section className="relative h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=2400&auto=format&fit=crop&q=80"
             alt="Hero background"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -39,15 +41,17 @@ export default function Home() {
       <section className="py-24">
         <div className="container px-4 max-w-4xl">
           <h2 className="text-4xl font-light mb-16 text-center">Recent Writing</h2>
-          <div className="grid gap-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10 mx-auto max-w-6xl px-6">
             {recentPosts.map((post) => (
               <article key={post.id} className="group">
                 <Link href={`/blog/${post.slug}`}>
                   <div className="aspect-[16/9] mb-6 overflow-hidden">
-                    <img
+                    <Image
                       src={post.coverImage}
                       alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      width={600}
+                      height={400}
+                      className="w-full h-[30vh] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div className="max-w-2xl mx-auto text-center">
