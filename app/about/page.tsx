@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <section className="relative h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <img
@@ -18,9 +18,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="flex-1 py-24 flex items-center">
         <div className="container px-4 max-w-2xl">
-          <div className="prose dark:prose-invert mx-auto">
+          <div className="prose dark:prose-invert mx-auto text-center">
             <p className="text-xl leading-relaxed">
               Hi, I'm Alex Chen, a software engineer and writer based in San Francisco. 
               Through this journal, I explore the evolving landscape of technology 
